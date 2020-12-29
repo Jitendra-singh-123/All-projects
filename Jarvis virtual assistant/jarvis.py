@@ -2,15 +2,14 @@ import pyttsx3  # pip install pyttsx3
 import speech_recognition as sr  # pip install speechRecognition
 import datetime
 import wikipedia  # pip install wikipedia
-import webbrowser
-import os
-import pywhatkit
-import pyaudio
-import pyjokes
-import wolframalpha
+import webbrowser   # pip install webbrowser
+import os   
+import pywhatkit    # pip install pywhatkit
+import pyaudio      # pip install pyaudio
+import pyjokes      # pip install pyjokes
+import wolframalpha    # pip install wolframalpha 
 import time
-from twilio.rest import Client
-#import ecapture as ec
+from twilio.rest import Client # pip install twilio
 
 
 listener = sr.Recognizer()
@@ -47,8 +46,7 @@ def take_command():
             if 'alexa' in command:
                 command = command.replace('alexa', '')
                 print(command)
-    except Exception as e:
-        # print(e)    
+    except Exception as e:    
         print("Say that again please...")  
         return "None"
     return command
@@ -93,6 +91,8 @@ def run_Jarvis():
 
     elif "calculate" in command: 
         query=command
+        # make account in wolframalpha and ger api id 
+        #api_id ="wolframalpha"
         app_id = "5KK3UK-A7ET3U9P3R"
         client = wolframalpha.Client(app_id)
         indx = query.lower().split().index('calculate') 
