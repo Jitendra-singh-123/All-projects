@@ -1,4 +1,7 @@
-************************************************************************  ROTATION OF IMAGE  **************************************************************************
+                                                                 ROTATION OF IMAGE  
+ 
+ 
+ 
  INFORMATION ABOUT THE PROJECT:
       This is the project on rotation of image by using opencv library in c++ language.
       About opencv:  OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library. OpenCV was built to provide a common                           infrastructure for computer vision applications and to accelerate the use of machine perception in the commercial products.
