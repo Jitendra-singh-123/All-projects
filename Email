@@ -229,7 +229,7 @@ def sending_mail(receiver, subject_of_mail, message):
     server.starttls()
     # Make sure to give app access in your Gmail account
     #logging to the gmail account
-    server.login('vickysingh31561@gmail.com','vickysingh12345')
+    server.login('vickysingh31561@gmail.com','*********')
     email = EmailMessage()
     email['From'] = 'vickysingh31561@gmail.com'
     email['To'] = receiver
