@@ -1,5 +1,7 @@
                                                               SUDUKO SOLVER  
-     
+    <a href="https://github.com/Jitendra-singh-123"><img align="center" src="https://github.com/Jitendra-singh-123/All-projects/blob/main/Jarvis%20virtual%20assistant/My%20Post%20(1).png"/></a>
+    
+    
 INFORMATION ABOUT THE PROJECT:
             This is 9*9 suduko solver program in c++ language, where the user have to partially filled the suduko and then program by itself solve the suduko.
       
