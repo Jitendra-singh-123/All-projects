@@ -15,17 +15,22 @@ import tensorflow as tf
 import zipfile
 import pathlib
 
+import cv2
 from collections import defaultdict
 from io import StringIO
 from matplotlib import pyplot as plt
 from PIL import Image
 from IPython.display import display
 
+
+
+#Import the object detection module:
 from object_detection.utils import ops as utils_ops
 from object_detection.utils import label_map_util
 from object_detection.utils import visualization_utils as vis_util
 
 ###################################################################################
+#compat.v1 allows you to write code that works both in TensorFlow 1.x and 2.x.
 # patch tf1 into `utils.ops`
 utils_ops.tf = tf.compat.v1
 
@@ -139,23 +144,22 @@ def capturing(ids):
           use_normalized_coordinates=True,
           line_thickness=2)
       image_np=cv2.cvtColor(image_np,cv2.COLOR_BGR2RGB)
-      bicycle_detect(ids,image_np,output_dict['detection_classes'],output_dict['detection_scores'],output_dict['detection_boxes'])
+      capturing_object(ids,image_np,output_dict['detection_classes'],output_dict['detection_scores'],output_dict['detection_boxes'])
       return image_np
     ################################################################################################
 
     from datetime import datetime
 
 
-    def bicycle_detect(ids,image, classes, score, boxes):
+    def capturing_object(ids,image, classes, score, boxes):
         for i in range(10):
             if (classes[i] == ids and score[i] > 0.7):
                 now = datetime.now()
-                dt_string = now.strftime("%d_%m_%Y_%H_%M_%S")
-                file_name = os.path.join('D:/TEST/', dt_string + '.jpg')
+                date_time = now.strftime("%d_%m_%Y_%H_%M_%S")
+                file_name = os.path.join('D:/TEST/', date_time + '.jpg')
                 cv2.imwrite(file_name, image)
-                print(dt_string)
+                print(date_time)
 
-    import cv2
     video = cv2.VideoCapture(r'D:\photos\demo.mp4')
     while (True):
         ret, img = video.read()
@@ -169,7 +173,6 @@ def capturing(ids):
 
 
 
-import cv2
 
 print("Select choice from below\n")
 print("1. Camera Video\n")
